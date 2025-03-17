@@ -9,3 +9,5 @@ function moveSlide(step) {
 
 // auto slide setiap 3 detik
 setInterval(() => moveSlide(1), 3000);
+
+
