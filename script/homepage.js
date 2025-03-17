@@ -10,4 +10,7 @@ function moveSlide(step) {
 // auto slide setiap 3 detik
 setInterval(() => moveSlide(1), 3000);
 
+document.getElementById("logo-nike").addEventListener("click", function() {
+    location.reload(); // refresh halaman
+});
 
