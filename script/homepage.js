@@ -14,3 +14,12 @@ document.getElementById("logo-nike").addEventListener("click", function() {
     location.reload(); // refresh halaman
 });
 
+
+
+
+
+
+
+
+
+

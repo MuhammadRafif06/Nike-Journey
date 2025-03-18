@@ -136,11 +136,43 @@ nav ul li:not(:last-child)::after {
     margin-top: 0; /* menghilangkan jarak atas paragraf */
 }
 
+.home-bottom-text {
+    position: absolute;
+    bottom: 5%;
+    font-family: "Inter", sans-serif;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    width: 80%;
+}
+
+
 .nike-story {
     font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4; /* warna background biar ada kontras */
+}
+
+.nike-story-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    padding: 50px 10%;
-    background-color: #fff;
+}
+
+.nike-story-card:hover {
+    transform: scale(1.05); /* sedikit membesar */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* bayangan lebih kuat */
+    cursor: pointer;
 }
 
 .nike-story h2 {
@@ -155,93 +187,11 @@ nav ul li:not(:last-child)::after {
 }
 
 .nike-story img {
-    width: 150px; /* sesuaikan ukuran */
-    display: block;
-    margin: 0 auto;
-}
-
-.testimonial {
-    font-family: "Inter", sans-serif;
-    padding: 50px 5%;
-    text-align: center;
-    background-color: #fff;
-    width: 100vw; /* biar full layar */
-    
-}
-
-.testimonial h2 {
-    font-size: 40px;
-    font-weight: bold;
-    padding-right: 10%;
-}
-
-/* container diperbaiki supaya card sejajar kanan kiri */
-.testimonial-section {
-    display: flex;
-    justify-content: center; /* biar dua card di tengah */
-    width: 100%;
-    padding-right: 10%;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 40px;
+    width: 150px; /* atur ukuran logo */
+    margin-top: 15px;
 }
 
 
-/* card ukurannya lebih stabil */
-.testimonial-card {
-    position: relative;
-    width: 48%; /* hampir setengah layar */
-    flex: 1;
-    max-width: 45%; /* batasi supaya nggak terlalu besar */
-    height: 400px;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-/* gambar responsif */
-.testimonial-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-}
-
-.testimonial-card:hover img {
-    transform: scale(1.1);
-}
-
-/* efek hover */
-.testimonial-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    padding: 20px;
-}
-
-.testimonial-card:hover .testimonial-text {
-    opacity: 1;
-}
-
-.testimonial-text h3 {
-    margin-bottom: 10px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.testimonial-text p {
-    font-size: 16px;
-}
 
 .highlights {
     font-family: "Inter", sans-serif;
