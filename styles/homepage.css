@@ -191,7 +191,88 @@ nav ul li:not(:last-child)::after {
     margin-top: 15px;
 }
 
+.testimonial {
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    padding: 50px 0;
+}
 
+
+.testimonial-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonial-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-slide {
+    flex: 0 0 33.33%; /* tampilkan 3 gambar sekaligus */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.testimonial-slide img {
+    width: 100%; /* biar gambar memenuhi container */
+    max-width: 500px; /* batas maksimal supaya nggak terlalu besar */
+    height: auto;
+    border-radius: 2%;
+}
+
+/* hover efek untuk teks */
+.testimonial-content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 83%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.testimonial-slide:hover .testimonial-content {
+    opacity: 1;
+}
+
+/* tombol prev & next */
+.testimonial-prev, .testimonial-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+    z-index: 10; /* pastikan tombol ada di atas gambar */
+}
+
+/* pastikan prev ada di kiri */
+.testimonial-prev {
+    left: 10px;
+}
+
+/* pastikan next ada di kanan */
+.testimonial-next {
+    right: 10px;
+}
 
 .highlights {
     font-family: "Inter", sans-serif;
