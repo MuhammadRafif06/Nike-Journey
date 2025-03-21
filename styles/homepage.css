@@ -197,7 +197,6 @@ nav ul li:not(:last-child)::after {
     padding: 50px 0;
 }
 
-
 .testimonial-container {
     position: relative;
     max-width: 1000px;
@@ -217,32 +216,44 @@ nav ul li:not(:last-child)::after {
 }
 
 .testimonial-slide {
-    flex: 0 0 33.33%; /* tampilkan 3 gambar sekaligus */
+    flex: 0 0 33.33%;
     text-align: center;
     padding: 20px;
     position: relative;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .testimonial-slide img {
-    width: 100%; /* biar gambar memenuhi container */
-    max-width: 500px; /* batas maksimal supaya nggak terlalu besar */
+    width: 100%;
+    max-width: 500px;
     height: auto;
-    border-radius: 2%;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* efek hover untuk gambar */
+.testimonial-slide:hover img {
+    transform: scale(1.05);
 }
 
 /* hover efek untuk teks */
 .testimonial-content {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.6);
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 10px;
-    width: 83%;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .testimonial-slide:hover .testimonial-content {
@@ -261,7 +272,7 @@ nav ul li:not(:last-child)::after {
     cursor: pointer;
     font-size: 20px;
     border-radius: 5px;
-    z-index: 10; /* pastikan tombol ada di atas gambar */
+    z-index: 10;
 }
 
 /* pastikan prev ada di kiri */
@@ -274,15 +285,15 @@ nav ul li:not(:last-child)::after {
     right: 10px;
 }
 
+
 .highlights {
     font-family: "Inter", sans-serif;
     text-align: center;
-    padding: 50px 5%;
-    background-color: #f9f9f9;
-    width: 100vw; /* full layar */
+    padding: 50px 0;
 }
 
 .highlights h2 {
+    font-family: "Inter", sans-serif;
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -291,38 +302,128 @@ nav ul li:not(:last-child)::after {
 .highlights-section {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* supaya responsive */
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* card untuk highlights */
 .highlight-card {
     position: relative;
-    width: 23%; /* 4 card dalam satu baris */
-    max-width: 280px;
-    height: 350px;
     overflow: hidden;
-    cursor: pointer;
     border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    width: 250px; /* ukuran card lebih vertikal */
+    height: 400px;
 }
 
-/* gambar responsif */
 .highlight-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* biar gambar menyesuaikan dan nggak ketarik */
+    border-radius: 10px;
     transition: transform 0.3s ease-in-out;
 }
 
+/* efek zoom ketika hover */
 .highlight-card:hover img {
     transform: scale(1.1);
 }
 
+/* text overlay muncul saat hover */
+.highlight-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6); /* efek transparan hitam */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
 
+/* efek munculnya teks saat hover */
+.highlight-card:hover .highlight-text {
+    opacity: 1;
+}
+
+
+.footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 30px 0;
+    font-family: "Inter", sans-serif;
+    border-top: 1px solid #ddd; /* garis tipis di atas footer */
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* logo footer */
+.footer-logo img {
+    width: 100px;
+}
+
+/* link footer */
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: black; /* warna hover */
+}
+
+/* social media icons */
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social img {
+    width: 25px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social img:hover {
+    transform: scale(1.2);
+}
+
+#ig {
+    width: 50px;
+}
+
+/* teks copyright */
+.footer-text {
+    font-size: 12px;
+    margin-top: 10px;
+    opacity: 0.7;
+}
 
 @media screen and (max-width: 1024px) {
     .bgHomePage-text h1 {

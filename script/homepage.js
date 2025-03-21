@@ -8,42 +8,44 @@ function moveSlide(step) {
 }
 
 // auto slide setiap 3 detik
-setInterval(() => moveSlide(1), 3000);
 
 document.getElementById("logo-nike").addEventListener("click", function() {
     location.reload(); // refresh halaman
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".testimonial-wrapper");
+    const slides = document.querySelectorAll(".testimonial-slide");
+    const prevBtn = document.querySelector(".testimonial-prev");
+    const nextBtn = document.querySelector(".testimonial-next");
+    
     let currentIndex = 0;
-    const slides = document.querySelector(".testimonial-wrapper");
-    const slideItems = document.querySelectorAll(".testimonial-slide");
-    const prevButton = document.querySelector(".testimonial-prev"); // ubah ke testimonial-prev
-    const nextButton = document.querySelector(".testimonial-next"); // ubah ke testimonial-next
-    const totalSlides = slideItems.length;
-    const slidesPerView = 3; // jumlah gambar yang tampil sekaligus
+    const totalSlides = slides.length;
+    const slideWidth = slides[0].clientWidth; // ambil lebar satu slide
 
-    function updateSlide() {
-        slides.style.transform = `translateX(-${(currentIndex * 100) / slidesPerView}%)`;
+    function updateSliderPosition() {
+        slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
-    function moveSlide(step) {
-        const newIndex = currentIndex + step;
-
-        if (newIndex < 0 || newIndex > totalSlides - slidesPerView) return;
-
-        currentIndex = newIndex;
-        updateSlide();
-    }
-
-    prevButton.addEventListener("click", function () {
-        moveSlide(-1);
+    nextBtn.addEventListener("click", function () {
+        if (currentIndex < totalSlides - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // balik ke awal kalau sudah slide terakhir
+        }
+        updateSliderPosition();
     });
 
-    nextButton.addEventListener("click", function () {
-        moveSlide(1);
+    prevBtn.addEventListener("click", function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalSlides - 1; // balik ke slide terakhir kalau di awal
+        }
+        updateSliderPosition();
     });
 });
+
 
 
 
