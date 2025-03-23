@@ -7,12 +7,12 @@ function moveSlide(step) {
     slides.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-// auto slide setiap 3 detik
-
+//refresh logo nike pada bagian navbar
 document.getElementById("logo-nike").addEventListener("click", function() {
     location.reload(); // refresh halaman
 });
 
+//Slider untuk Testimonial
 document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector(".testimonial-wrapper");
     const slides = document.querySelectorAll(".testimonial-slide");
