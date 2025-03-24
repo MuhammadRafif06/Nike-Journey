@@ -3,8 +3,20 @@ html, body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white; /* Warna abu-abu medium */
-    color: #fff;
+    background-color: white;
+    color: white;
+}
+
+header {
+    background: linear-gradient(90deg, #2C3E50, #333333); /* Biru ke abu-abu */
+    color:#ffffff; /* Biru tua untuk teks */
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -173,3 +185,115 @@ margin-top: 10px;
 opacity: 0.7;
 }   
 
+/* RESPONSIVE DESIGN */
+
+/* Untuk layar sedang (tablet) */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 95%; /* biar lebih lebar di tablet */
+        padding: 20px;
+    }
+
+    .image-container img {
+        max-width: 250px; /* perkecil gambar */
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .collaboration-box {
+        flex-direction: column; /* gambar dan teks jadi bertumpuk */
+        text-align: center;
+    }
+
+    .collaboration-box img {
+        margin-bottom: 10px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Untuk layar kecil (hp) */
+@media screen and (max-width: 768px) {
+    header {
+        font-size: 24px;
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container img {
+        max-width: 80%;
+    }
+
+    .collaboration-box {
+        padding: 10px;
+    }
+
+    .collaboration-box img {
+        width: 120px; /* perkecil gambar */
+    }
+
+    .footer-logo img {
+        width: 80px;
+    }
+
+    .footer-social img {
+        width: 20px;
+    }
+
+    .footer-text {
+        font-size: 10px;
+    }
+}
+
+/* Untuk layar sangat kecil (hp kecil) */
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .image-container img {
+        max-width: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+}

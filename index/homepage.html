@@ -142,10 +142,12 @@
             </div>
 
             <div class="highlight-card">
-                <img src="/assets/images/highlights 3.jpg" alt="highlight 3">
-                <div class="highlight-text">
-                    <h3>First Product</h3>
-                </div>
+                <a href="firstProduct.html">
+                    <img src="/assets/images/highlights 3.jpg" alt="highlight 3">
+                    <div class="highlight-text">
+                        <h3>First Product</h3>
+                    </div>
+                </a>
             </div>
             <div class="highlight-card">
                 <a href="bestSellershoe.html">
@@ -159,8 +161,11 @@
 
     </section>
 
-        <footer class="footer">
-            <div class="footer-container">
+    <!--Navbar-->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- bagian kiri: logo & links -->
+            <div class="footer-left">
                 <div class="footer-logo">
                     <img src="/assets/images/nike_logo_black.png" alt="Nike Logo">
                 </div>
@@ -175,11 +180,24 @@
                     <a href="#"><img src="/assets/icons/x logo.jpg" alt="Twitter"></a>
                     <a href="#"><img src="/assets/icons/Instagram-Logo-2016.png" id="ig" alt="Instagram"></a>
                 </div>
-                <p class="footer-text">© 2025 Nike Journey. All Rights Reserved.</p>
             </div>
-        </footer>
-        
-        
+    
+            <!-- bagian kanan: form -->
+            <div class="footer-right">
+                <h3>Have a suggestion? Let us know!</h3>
+                <form id="suggestionForm">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <textarea id="suggestion" name="suggestion" placeholder="Your Suggestion" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            
+        </div>
+    
+        <p class="footer-text">© 2025 Nike Journey. All Rights Reserved.</p>
+    </footer>    
+    
     </div>
     <script src="/script/homepage.js"></script>
 </body>

@@ -52,6 +52,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+function doPost(e) {
+    var sheet = SpreadsheetApp.openById("1gALD9t4nFw7KT4yAJCrN0gSI9lcFsd9HCMAD-M1nmQY").getSheetByName("FormResponses");
+  
+    // cek apakah request mengandung data
+    if (!e || !e.parameter.name || !e.parameter.email || !e.parameter.suggestion) {
+      return ContentService.createTextOutput("No data received").setMimeType(ContentService.MimeType.TEXT);
+    }
+  
+    // tambahkan data ke spreadsheet
+    sheet.appendRow([new Date(), e.parameter.name, e.parameter.email, e.parameter.suggestion]);
+  
+    return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
+  }
+  
+  
+  document.getElementById("suggestionForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let formData = new FormData(this);
+
+    fetch("https://script.google.com/macros/s/AKfycbyIRvIMr5Yb3MXcRwio00UOZ5yNKknM6GwJqPPuhAxkZuCUFYNroDbflEMTXUWXQHmd/exec", {
+        method: "POST",
+        body: formData
+    }).then(response => {
+        alert("Thanks for your suggestion!");
+        document.getElementById("suggestionForm").reset();
+    }).catch(error => console.error("Error:", error));
+});
+
+
+  
+
+
 
 
 
