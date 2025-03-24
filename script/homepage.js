@@ -1,11 +1,17 @@
 //Slider Homepage
 let currentIndex = 0;
+
 function moveSlide(step) {
     const slides = document.querySelector(".slides");
     const totalSlides = document.querySelectorAll(".slide").length;
     currentIndex = (currentIndex + step + totalSlides) % totalSlides;
     slides.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
+
+// jalankan slider otomatis setiap 3 detik
+setInterval(() => {
+    moveSlide(1); // geser ke slide berikutnya
+}, 3000);
 
 //refresh logo nike pada bagian navbar
 document.getElementById("logo-nike").addEventListener("click", function() {
