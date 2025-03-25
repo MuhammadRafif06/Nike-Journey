@@ -13,6 +13,22 @@ setInterval(() => {
     moveSlide(1); // geser ke slide berikutnya
 }, 3000);
 
+function toggleMenu() {
+    const menu = document.querySelector(".nav-links");
+    menu.classList.toggle("active");
+}
+
+// tutup menu jika klik di luar
+document.addEventListener("click", function(event) {
+    const menu = document.querySelector(".nav-links");
+    const button = document.querySelector(".hamburger");
+
+    if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.classList.remove("active");
+    }
+});
+
+
 //refresh logo nike pada bagian navbar
 document.getElementById("logo-nike").addEventListener("click", function() {
     location.reload(); // refresh halaman
@@ -52,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Form
 function doPost(e) {
     var sheet = SpreadsheetApp.openById("1gALD9t4nFw7KT4yAJCrN0gSI9lcFsd9HCMAD-M1nmQY").getSheetByName("FormResponses");
   
@@ -65,8 +82,7 @@ function doPost(e) {
   
     return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
   }
-  
-  
+
   document.getElementById("suggestionForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -80,6 +96,9 @@ function doPost(e) {
         document.getElementById("suggestionForm").reset();
     }).catch(error => console.error("Error:", error));
 });
+
+
+
 
 
   
