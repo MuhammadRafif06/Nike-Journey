@@ -1,694 +1,685 @@
-html, body {
-    overflow-x: hidden; /* hilangin scroll horizontal */
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    background-color: white;
-    color: black;
-    transition: all 0.3s ease-in-out;
+html,
+body {
+  overflow-x: hidden; /* hilangin scroll horizontal */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background-color: white;
+  color: black;
+  transition: all 0.3s ease-in-out;
 }
 
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: white;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 50px; 
-    border-bottom: 1px solid black;
-    font-family: 'Lato', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px;
+  border-bottom: 1px solid black;
+  font-family: "Lato", sans-serif;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    padding-right: 5%;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  padding-right: 5%;
+  margin: 0;
 }
 
 nav ul li {
-    margin-left: 20px;
-    position: relative;
+  margin-left: 20px;
+  position: relative;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    padding: 8px 12px;
-    transition: color 0.3s ease-in-out;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: color 0.3s ease-in-out;
 }
 
 nav ul li a::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: black;
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    transition: width 0.1s ease-in-out;
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: black;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  transition: width 0.1s ease-in-out;
 }
 
 .hamburger {
-    display: none;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: black;
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  gap: 20px;
 }
 
 .nav-links li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 nav ul li:not(:last-child)::after {
-    content: \"\";
-    position: absolute;
-    right: -10px;
-    border-right: 1px solid black;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 20px;
-    background-color: #ccc;
+  content: \"\";
+  position: absolute;
+  right: -10px;
+  border-right: 1px solid black;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 20px;
+  background-color: #ccc;
 }
 
 .navLogo img {
-    height: 40px;
+  height: 40px;
 }
 
 .bgHomePage {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    margin: 0 auto;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .slides {
-    display: flex;
-    width: 100%;
-    transition: transform 0.5s ease-in-out;
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
 }
 
 .slide {
-    width: 100%;
-    flex: 0 0 100%;
+  width: 100%;
+  flex: 0 0 100%;
 }
 
 .slide img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 20px;
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
 
 .bgHomePage-text {
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    color: white;
-    font-family: "Inter", sans-serif;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  color: white;
+  font-family: "Inter", sans-serif;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .bgHomePage-text h1 {
-    font-size: 70px;
-    font-weight: bolder;
-    margin-bottom: 5px; /* mengurangi jarak bawah h1 */
+  font-size: 70px;
+  font-weight: bolder;
+  margin-bottom: 5px; /* mengurangi jarak bawah h1 */
 }
 
 .bgHomePage-text p {
-    font-size: 20px;
-    font-weight: 400;
-    margin-top: 0; /* menghilangkan jarak atas paragraf */
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 0; /* menghilangkan jarak atas paragraf */
 }
 
 .home-bottom-text {
-    position: absolute;
-    bottom: 5%;
-    font-family: "Inter", sans-serif;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
-    width: 80%;
+  position: absolute;
+  bottom: 5%;
+  font-family: "Inter", sans-serif;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  width: 80%;
 }
 
-
 .nike-story {
-    font-family: "Inter", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 20px;
-    background-color: #f4f4f4; /* warna background biar ada kontras */
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f4f4f4; /* warna background biar ada kontras */
 }
 
 .nike-story-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 1000px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .nike-story-card:hover {
-    transform: scale(1.05); /* sedikit membesar */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* bayangan lebih kuat */
-    cursor: pointer;
+  transform: scale(1.05); /* sedikit membesar */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* bayangan lebih kuat */
+  cursor: pointer;
 }
 
 .nike-story h2 {
-    font-size: 28px;
-    font-weight: bold;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .nike-story p {
-    font-size: 18px;
-    font-weight: 400;
-    margin: 10px 0 20px;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 10px 0 20px;
 }
 
 .nike-story img {
-    width: 150px; /* atur ukuran logo */
-    margin-top: 15px;
+  width: 150px; /* atur ukuran logo */
+  margin-top: 15px;
 }
 
 .testimonial {
-    font-family: "Inter", sans-serif;
-    text-align: center;
-    padding: 50px 0;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  padding: 50px 0;
 }
 
 .testimonial-container {
-    position: relative;
-    max-width: 1000px;
+    overflow: hidden; /* Biar slide gak keluar dari batas */
+    width: 100%;
+    max-width: 800px; /* Sesuaikan dengan kebutuhan */
     margin: auto;
-    overflow: hidden;
+    position: relative;
 }
 
 .testimonial-slider {
     display: flex;
-    overflow: hidden;
-    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    width: fit-content; /* atau max-content jika butuh */
 }
 
 .testimonial-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    gap: 20px; /* kasih jarak antar card */
+    width: fit-content; /* atau max-content untuk menghindari ruang putih */
 }
 
 .testimonial-slide {
-    flex: 0 0 32%;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    background: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+  flex: 0 0 32%;
+  min-width: 100%;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
 }
 
 .testimonial-slide img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
 }
 
 /* efek hover untuk gambar */
 .testimonial-slide:hover img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* teks testimonial, full menutupi gambar */
 .testimonial-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.75);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center; /* pastiin teks di tengah */
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    padding: 20px;
-    border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* pastiin teks di tengah */
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 /* teks muncul saat hover */
 .testimonial-slide:hover .testimonial-content {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* nama testimonial di atas */
 .testimonial-content h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center; /* pastiin judul juga tengah */
-
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center; /* pastiin judul juga tengah */
 }
 
 /* isi teks testimonial */
 .testimonial-content p {
-    font-size: 12px;
-    max-width: 80%; /* supaya ga terlalu lebar */
-    text-align: center; /* pastiin teks di tengah */
+  font-size: 16px;
+  max-width: 80%; /* supaya ga terlalu lebar */
+  text-align: center; /* pastiin teks di tengah */
 }
 
 /* tombol prev & next */
-.testimonial-prev, .testimonial-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
-    z-index: 10;
-    transition: background 0.3s;
+.testimonial-prev,
+.testimonial-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  z-index: 10;
+  transition: background 0.3s;
 }
 
 /* tombol lebih kecil & transparan saat hover */
-.testimonial-prev:hover, .testimonial-next:hover {
-    background: rgba(0, 0, 0, 0.9);
+.testimonial-prev:hover,
+.testimonial-next:hover {
+  background: rgba(0, 0, 0, 0.9);
 }
 
 /* posisi tombol */
 .testimonial-prev {
-    left: 5px;
+  left: 5px;
 }
 
 .testimonial-next {
-    right: 5px;
+  right: 5px;
 }
 
-
-
 .highlights {
-    font-family: "Inter", sans-serif;
-    text-align: center;
-    padding: 50px 0;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  padding: 50px 0;
 }
 
 .highlights h2 {
-    font-family: "Inter", sans-serif;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .highlights-section {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .highlight-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    width: 250px; /* ukuran card lebih vertikal */
-    height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  width: 250px; /* ukuran card lebih vertikal */
+  height: 400px;
 }
 
 .highlight-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* biar gambar menyesuaikan dan nggak ketarik */
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* biar gambar menyesuaikan dan nggak ketarik */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
 }
 
 /* efek zoom ketika hover */
 .highlight-card:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* text overlay muncul saat hover */
 .highlight-text {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.6); /* efek transparan hitam */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    padding: 20px;
-    border-radius: 10px;
-    
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6); /* efek transparan hitam */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 /* efek munculnya teks saat hover */
 .highlight-card:hover .highlight-text {
-    opacity: 1;
+  opacity: 1;
 }
 
-
 .footer {
-    font-family: "Inter", sans-serif;
-    background-color: white;
-    color: black;
-    padding: 20px 0;
-    
+  font-family: "Inter", sans-serif;
+  background-color: white;
+  color: black;
+  padding: 20px 0;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
 .footer-left {
-    width: 45%;
+  width: 45%;
 }
 
 .footer-logo img {
-    width: 120px;
-    margin-bottom: 10px;
+  width: 120px;
+  margin-bottom: 10px;
 }
 
 .footer-links {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .footer-links a {
-    display: block;
-    color: black;
-    text-decoration: none;
-    margin: 5px 0;
+  display: block;
+  color: black;
+  text-decoration: none;
+  margin: 5px 0;
 }
 
 .footer-social a img {
-    width: 30px;
-    margin-right: 10px;
+  width: 30px;
+  margin-right: 10px;
 }
 
 .footer-right {
-    width: 45%;
-    text-align: left;
+  width: 45%;
+  text-align: left;
 }
 
 .footer-right h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .footer-right form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .footer-right input,
 .footer-right textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
 .footer-right textarea {
-    height: 80px;
-    resize: none;
+  height: 80px;
+  resize: none;
 }
 
 .footer-right button {
-    background-color: white;
-    color: black;
-    padding: 10px;
-    border: none;
-    border: 1px solid #ccc; 
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 5px;
-    transition: 0.3s;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: none;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
 .footer-right button:hover {
-    background-color: #f1f1f1; /* warna saat hover */
-    border-color: #999; /* border jadi lebih gelap pas hover */
+  background-color: #f1f1f1; /* warna saat hover */
+  border-color: #999; /* border jadi lebih gelap pas hover */
 }
 .footer-text {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
-
 
 /* responsive design */
 
 /* untuk layar kecil (hp) */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 20px;
-    }
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
 
-    .hamburger {
-        display: block;
-    }
+  .hamburger {
+    display: block;
+  }
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 10px 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
 
-    .nav-links.active {
-        display: flex;
-    }
+  .nav-links.active {
+    display: flex;
+  }
 
-    .nav-links li {
-        text-align: center;
-        padding: 10px 0;
-    }
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
 
-    nav ul {
-        flex-direction: column;
-        padding-right: 0;
-    }
+  nav ul {
+    flex-direction: column;
+    padding-right: 0;
+  }
 
-    nav ul li {
-        margin: 10px 0;
-    }
+  nav ul li {
+    margin: 10px 0;
+  }
 
-    .bgHomePage-text {
-        top: 20%;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        width: 90%;
-    }
+  .bgHomePage-text {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%;
+  }
 
-    .bgHomePage-text h1 {
-        font-size: 40px;
-    }
+  .bgHomePage-text h1 {
+    font-size: 40px;
+  }
 
-    .bgHomePage-text p {
-        font-size: 16px;
-    }
+  .bgHomePage-text p {
+    font-size: 16px;
+  }
 
-    .home-bottom-text {
-        font-size: 14px;
-        width: 90%;
-    }
+  .home-bottom-text {
+    font-size: 14px;
+    width: 90%;
+  }
 
-    .nike-story {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 15px;
-    }
+  .nike-story {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 15px;
+  }
 
-    .nike-story-card {
-        width: 90%;
-    }
+  .nike-story-card {
+    width: 90%;
+  }
 
-    .testimonial-slide {
-        flex: 0 0 100%;
-    }
+  .testimonial-slide {
+    flex: 0 0 100%;
+  }
 
-    .highlights-section {
-        flex-direction: column;
-        align-items: center;
-    }
+  .highlights-section {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .highlight-card {
-        width: 90%;
-        height: auto;
-    }
+  .highlight-card {
+    width: 90%;
+    height: auto;
+  }
 
-    .footer-links {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 
-    .footer-social {
-        gap: 10px;
-    }
+  .footer-social {
+    gap: 10px;
+  }
 
-    .footer-form {
-        width: 100%;
-        max-width: 400px;
-        margin: 20px auto;
-        text-align: center;
-    }
-    
-    .footer-form h3 {
-        font-size: 18px;
-        margin-bottom: 10px;
-        color: #fff;
-    }
-    
-    .footer-form form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .footer-form input,
-    .footer-form textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 14px;
-    }
-    
-    .footer-form textarea {
-        height: 80px;
-        resize: none;
-    }
-    
-    .footer-form button {
-        background-color: black;
-        color: white;
-        padding: 10px;
-        border: none;
-        cursor: pointer;
-        font-size: 14px;
-        border-radius: 5px;
-        transition: 0.3s;
-    }
-    
-    .footer-form button:hover {
-        background-color: #444;
-    }    
+  .footer-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .footer-form h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .footer-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-form input,
+  .footer-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .footer-form textarea {
+    height: 80px;
+    resize: none;
+  }
+
+  .footer-form button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .footer-form button:hover {
+    background-color: #444;
+  }
 }
 
 /* untuk tablet */
 @media (max-width: 1024px) {
-    .bgHomePage-text h1 {
-        font-size: 50px;
-    }
+  .bgHomePage-text h1 {
+    font-size: 50px;
+  }
 
-    .bgHomePage-text p {
-        font-size: 18px;
-    }
+  .bgHomePage-text p {
+    font-size: 18px;
+  }
 
-    .nike-story-card {
-        max-width: 800px;
-    }
+  .nike-story-card {
+    max-width: 800px;
+  }
 
-    .testimonial-slide {
-        flex: 0 0 50%;
-    }
+  .testimonial-slide {
+    flex: 0 0 50%;
+  }
 
-    .highlight-card {
-        width: 200px;
-    }
+  .highlight-card {
+    width: 200px;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
